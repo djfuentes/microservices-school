@@ -25,6 +25,7 @@ install:
 before_script:
   - SERVICE=$SERVICE make ensure-dependencies
   - sleep 10
+  - make brand
 
 script:
   - make qa
