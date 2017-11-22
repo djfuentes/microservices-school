@@ -20,7 +20,7 @@ before_install:
   - node --version
 
 install: 
-  - npm install --only=production
+  - yarn install
 
 before_script:
   - SERVICE=$SERVICE make ensure-dependencies
