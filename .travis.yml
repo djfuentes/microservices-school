@@ -27,7 +27,7 @@ before_script:
   - sleep 10
 
 script:
-  - make aq
+  - make qa
 
 matrix:
   include:
