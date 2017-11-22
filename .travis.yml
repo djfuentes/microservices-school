@@ -7,6 +7,8 @@ language: node_js
 env:
   global:
   - NODE_ENV='test'
+  - DOCKER_USERNAME='djfuentes+github'
+  - DOCKER_PASSWORD='9FZ4STF0H3LX965A1CN6ANCB9F8R1ZCWP9O3XM6FHYK6A3I3N7AFBPV65LJU257C'
 
 branches:
   only:
@@ -26,6 +28,7 @@ before_script:
   - SERVICE=$SERVICE make ensure-dependencies
   - sleep 10
   - make brand
+  - make build
 
 script:
   - make qa
