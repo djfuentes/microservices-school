@@ -52,3 +52,5 @@ ONBUILD COPY ./ /root/app/
 # display installed nvm packages, should not be cached if any files changed
 # Uncomment this when https://github.com/yarnpkg/yarn/pull/1463 is available
 # ONBUILD RUN yarn ls --depth 0 || true
+
+COPY manifest.json /root/app/manifest.json

@@ -28,7 +28,7 @@ before_script:
   - SERVICE=$SERVICE make ensure-dependencies
   - sleep 10
   - make brand
-  - make build
+  - make package
 
 script:
   - make qa
