@@ -16,31 +16,26 @@ branches:
   - all-services-developed
 
 before_install:
-  - cd ./$SERVICE
-  - nvm install
-  - nvm use
-  - node --version
-
-install: 
-  - yarn install
-
+- cd ./$SERVICE
+- nvm install
+- nvm use
+- npm install --only=production
 before_script:
-  - SERVICE=$SERVICE make ensure-dependencies
-  - sleep 10
-  - make brand
-  - make package
-
+- SERVICE=$SERVICE make ensure-dependencies
+- sleep 10
 script:
-  - make qa
+- make brand
+- make package
+- make qa
 
 matrix:
   include:
-    - env: SERVICE=recipes-api
-      services:
-        - docker
-    - env: SERVICE=recipes-crawler
-      services:
-        - docker
-    - env: SERVICE=recipes-id-generator
-      services:
-        - docker
+  - env: SERVICE=recipes-api
+    services:
+    - docker
+  - env: SERVICE=recipes-crawler
+    services:
+    - docker
+  - env: SERVICE=recipes-id-generator
+    services:
+    - docker
