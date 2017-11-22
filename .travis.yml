@@ -27,7 +27,7 @@ before_script:
   - sleep 10
 
 script:
-  - npm run test
+  - make aq
 
 matrix:
   include:
